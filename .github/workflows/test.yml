@@ -1,0 +1,51 @@
+name: "Test"
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+  NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
+  NEW_RELIC_REGION: ${{ vars.NEW_RELIC_REGION }}
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - run: terraform fmt -check
+
+      - run: terraform init
+
+      - run: terraform validate
+
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      TF_INPUT: false
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - run: terraform init
+        working-directory: ./modules/alerts/policies
+
+      - run: terraform test
+        working-directory: ./modules/alerts/policies
