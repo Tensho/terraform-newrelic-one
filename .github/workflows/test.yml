@@ -1,0 +1,47 @@
+name: "Test"
+
+on:
+  push:
+    branches:
+      - '**'
+
+env:
+  NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
+  NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
+  NEW_RELIC_REGION: ${{ vars.NEW_RELIC_REGION }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - run: terraform fmt -check
+
+      - run: terraform init
+
+      - run: terraform validate
+
+  examples:
+    runs-on: ubuntu-latest
+    env:
+      TF_INPUT: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0"
+
+      - run: terraform init
+        working-directory: ./examples/basic-alert-policy
+
+      - run: terraform validate
+        working-directory: ./examples/basic-alert-policy
+
+      - run: terraform plan
+        working-directory: ./examples/basic-alert-policy
