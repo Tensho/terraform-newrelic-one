@@ -10,9 +10,14 @@ env:
   NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
   NEW_RELIC_REGION: ${{ vars.NEW_RELIC_REGION }}
 
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +33,8 @@ jobs:
 
   examples:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       TF_INPUT: false
     steps:
