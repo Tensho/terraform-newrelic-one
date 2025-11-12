@@ -1,5 +1,6 @@
 [tools]
 terraform = "latest"
+tflint = "latest"
 
 [env]
 _.file = '../../.env'

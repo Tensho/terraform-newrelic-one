@@ -1,19 +1,19 @@
 output "alert_policy" {
-  value       = module.alerts.alert_policy
+  value       = newrelic_alert_policy.default
   description = "NewRelic alert policy."
 }
 
 output "alert_policy_id" {
-  value       = module.alerts.alert_policy_id
+  value       = newrelic_alert_policy.default.id
   description = "NewRelic alert policy ID."
 }
 
 output "nrql_conditions" {
-  value       = module.alerts.nrql_conditions
+  value       = newrelic_nrql_alert_condition.default
   description = "NewRelic NRQL alert conditions."
 }
 
 output "workflow" {
-  value       = module.alerts.workflow
+  value       = length(newrelic_workflow.default) > 0 ? newrelic_workflow.default[0] : null
   description = "NewRelic workflow."
 }

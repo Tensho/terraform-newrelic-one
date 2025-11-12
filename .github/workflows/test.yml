@@ -45,10 +45,10 @@ jobs:
           terraform_version: "1.7.0"
 
       - run: terraform init
-        working-directory: ./examples/basic-alert-policy
+        working-directory: ./examples/alerts
 
       - run: terraform validate
-        working-directory: ./examples/basic-alert-policy
+        working-directory: ./examples/alerts
 
       - run: terraform plan
-        working-directory: ./examples/basic-alert-policy
+        working-directory: ./examples/alerts

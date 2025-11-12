@@ -184,10 +184,10 @@ export NEW_RELIC_REGION=US
 
 ### Development
 
-#### Basic Alert Policy
+#### Alerts
 
 ```shell
-cd examples/basic-alert-policy
+cd examples/alerts
 terraform init
 terraform apply
 terraform destroy

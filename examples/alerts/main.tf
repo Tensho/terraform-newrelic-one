@@ -91,6 +91,23 @@ module "example" {
         recipients              = "team@example.com"
         include_json_attachment = "false"
       }
+    },
+    {
+      name = "Slack Notifications"
+      type = "SLACK"
+
+      config = {
+        channel = "#alerts"
+        url     = "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+      }
+    },
+    {
+      name = "Webhook Notifications"
+      type = "WEBHOOK"
+
+      config = {
+        url = "https://example.com/webhook"
+      }
     }
   ]
 }

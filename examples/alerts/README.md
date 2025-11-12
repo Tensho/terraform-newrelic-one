@@ -1,4 +1,4 @@
-# Basic Alert Policy Example
+# Alert Policy Example
 
 This example demonstrates how to create a basic NewRelic alert policy with NRQL conditions and notification channels.
 
