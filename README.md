@@ -1,4 +1,4 @@
-# NewRelic Alert Policy Terraform Module
+# NewRelic One Terraform Module
 
 Terraform module to manage [NewRelic One](https://newrelic.com) resources (batteries included).
 
