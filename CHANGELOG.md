@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/Tensho/terraform-newrelic-one/compare/v1.1.0...v1.1.1) (2025-11-24)
+
+
+### Bug Fixes
+
+* gratify public module registry flat sub-module structure ([9c1ed28](https://github.com/Tensho/terraform-newrelic-one/commit/9c1ed28a8a25bc95a5143a641ab67aa2883e57d6))
+
 ## [1.1.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.0.0...v1.1.0) (2025-11-24)
 
 
