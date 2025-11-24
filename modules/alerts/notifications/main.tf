@@ -95,7 +95,7 @@ resource "newrelic_workflow" "default" {
 
   issues_filter {
     name = each.value.issues_filter.name
-    type = each.value.issues_filter.type
+    type = "FILTER"
 
     dynamic "predicate" {
       for_each = each.value.issues_filter.predicates

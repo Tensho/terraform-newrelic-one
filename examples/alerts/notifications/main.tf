@@ -50,7 +50,6 @@ module "example" {
 
       issues_filter = {
         name = "filter-name"
-        type = "FILTER" # Deprecated
 
         predicates = [
           {
