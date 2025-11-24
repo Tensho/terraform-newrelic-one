@@ -75,6 +75,31 @@ run "basic" {
       }
     }
   }
+
+  assert {
+    condition     = length(newrelic_alert_policy.default["example-one"]) > 0
+    error_message = "Alert policy 'example-one' has not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_alert_policy.default["example-two"]) > 0
+    error_message = "Alert policy 'example-two' has not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_nrql_alert_condition.default["example-one/all-attributes"]) > 0
+    error_message = "Alert policy 'example-one/all-attributes' has not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_nrql_alert_condition.default["example-one/required-attributes"]) > 0
+    error_message = "Alert policy 'example-one/required-attributes' has not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_nrql_alert_condition.default["example-two/required-attributes"]) > 0
+    error_message = "Alert policy 'example-two/required-attributes' has not been created"
+  }
 }
 
 run "missing_terms" {
