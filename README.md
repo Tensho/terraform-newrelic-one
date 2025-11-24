@@ -7,7 +7,7 @@ Terraform module to manage [NewRelic One](https://newrelic.com) resources (batte
 ```hcl
 module "example" {
   source  = "Tensho/one/newrelic//modules/alerts/policies"
-  version = "1.0.0"
+  version = "1.1.0"
 
   policies = {
     "alice" = {
@@ -73,11 +73,10 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 
 * [x] [NewRelic alert policies](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/)
 * [x] [NewRelic NRQL conditions](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-conditions/create-nrql-alert-conditions/)
-* [ ] [NewRelic notification channels](https://docs.newrelic.com/docs/alerts-applied-intelligence/notifications/intro-notifications/)
-* [ ] [NewRelic workflows](https://docs.newrelic.com/docs/alerts-applied-intelligence/applied-intelligence/incident-workflows/incident-workflows/)
-
-<!-- BEGIN_TF_DOCS -->
-<!-- END_TF_DOCS -->
+* [x] [NewRelic notification channels](https://docs.newrelic.com/docs/alerts-applied-intelligence/notifications/intro-notifications/)
+* [x] [NewRelic workflows](https://docs.newrelic.com/docs/alerts-applied-intelligence/applied-intelligence/incident-workflows/incident-workflows/)
+* [ ] [NewRelic dashboards](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/)
+* [ ] [NewRelic synthetics monitors](https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/using-monitors/intro-synthetic-monitoring/)
 
 ## Contributing
 
