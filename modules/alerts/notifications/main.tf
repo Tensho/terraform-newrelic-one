@@ -112,7 +112,7 @@ resource "newrelic_workflow" "default" {
     for_each = each.value.notification_channels
 
     content {
-      channel_id = newrelic_notification_channel.default["${each.key}/${destination.value.destination_key}"].id
+      channel_id = newrelic_notification_channel.default["${each.key}/${destination.key}"].id
     }
   }
 }

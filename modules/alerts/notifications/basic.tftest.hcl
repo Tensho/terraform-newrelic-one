@@ -42,8 +42,8 @@ run "basic" {
     }
 
     workflows = {
-      "example-one" = {
-        name = "Example One"
+      "example" = {
+        name = "Example"
 
         muting_rules_handling = "NOTIFY_ALL_ISSUES"
 
@@ -72,7 +72,7 @@ run "basic" {
 
         notification_channels = {
           "webhook" = {
-            name = "Example one"
+            name = "Webhook"
             type = "WEBHOOK"
 
             destination_key = "webhook"
@@ -114,12 +114,12 @@ run "basic" {
   }
 
   assert {
-    condition     = length(newrelic_notification_channel.default["example-one/webhook"]) > 0
-    error_message = "Notification channel 'example-one/webhook' has not been created"
+    condition     = length(newrelic_notification_channel.default["example/webhook"]) > 0
+    error_message = "Notification channel 'example/webhook' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_workflow.default["example-one"]) > 0
-    error_message = "Workflow 'example-one' has not been created"
+    condition     = length(newrelic_workflow.default["example"]) > 0
+    error_message = "Workflow 'example' has not been created"
   }
 }
