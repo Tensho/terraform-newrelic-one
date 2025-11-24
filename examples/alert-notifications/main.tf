@@ -1,5 +1,5 @@
 module "example" {
-  source = "../../../modules/alerts/notifications"
+  source = "../../modules/alert-notifications"
 
   destinations = {
     "webhook" = {

@@ -1,5 +1,5 @@
 module "example" {
-  source = "../../../modules/alerts/policies"
+  source = "../../modules/alert-policies"
 
   policies = {
     "alice" = {

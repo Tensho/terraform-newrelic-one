@@ -6,7 +6,7 @@ Terraform module to manage [NewRelic One](https://newrelic.com) resources (batte
 
 ```hcl
 module "example" {
-  source  = "Tensho/one/newrelic//modules/alerts/policies"
+  source  = "Tensho/one/newrelic//modules/alert-policies"
   version = "1.1.0"
 
   policies = {
@@ -114,7 +114,11 @@ export NEW_RELIC_API_KEY=<REDACTED>
 ### Testing
 
 ```shell
-cd modules/alerts/policies
+cd modules/alert-policies
+terraform init
+terraform test
+
+cd modules/alert-notifications
 terraform init
 terraform test
 ```
