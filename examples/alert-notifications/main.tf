@@ -43,8 +43,8 @@ module "example" {
   }
 
   workflows = {
-    "alice" = {
-      name = "Alice"
+    "example" = {
+      name = "Example"
 
       muting_rules_handling = "NOTIFY_ALL_ISSUES"
 

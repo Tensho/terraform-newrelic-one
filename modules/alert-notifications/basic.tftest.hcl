@@ -2,11 +2,11 @@ run "basic" {
   variables {
     destinations = {
       "webhook" = {
-        name = "example"
+        name = "test"
         type = "WEBHOOK"
 
         secure_url = {
-          prefix        = "https://webhook.example.com/"
+          prefix        = "https://webhook.test.com/"
           secure_suffix = "service_id/123456"
         }
 
@@ -24,7 +24,7 @@ run "basic" {
       }
 
       "pagerduty" = {
-        name = "example"
+        name = "test"
         type = "PAGERDUTY_ACCOUNT_INTEGRATION"
 
         properties = [
@@ -42,8 +42,8 @@ run "basic" {
     }
 
     workflows = {
-      "example" = {
-        name = "Example"
+      "test" = {
+        name = "Test"
 
         muting_rules_handling = "NOTIFY_ALL_ISSUES"
 
@@ -113,12 +113,12 @@ run "basic" {
   }
 
   assert {
-    condition     = length(newrelic_notification_channel.default["example/webhook"]) > 0
-    error_message = "Notification channel 'example/webhook' has not been created"
+    condition     = length(newrelic_notification_channel.default["test/webhook"]) > 0
+    error_message = "Notification channel 'test/webhook' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_workflow.default["example"]) > 0
-    error_message = "Workflow 'example' has not been created"
+    condition     = length(newrelic_workflow.default["test"]) > 0
+    error_message = "Workflow 'test' has not been created"
   }
 }

@@ -1,9 +1,9 @@
 run "basic" {
   variables {
     policies = {
-      "example-one" = {
-        name                = "Example One"
-        description         = "Example One alert policy managed by Terraform"
+      "test-one" = {
+        name                = "Test One"
+        description         = "Test One alert policy managed by Terraform"
         incident_preference = "PER_POLICY"
 
         nrql_conditions = {
@@ -52,9 +52,9 @@ run "basic" {
           },
         }
       }
-      "example-two" = {
-        name        = "Example Two"
-        description = "Example Two alert policy managed by Terraform"
+      "test-two" = {
+        name        = "Test Two"
+        description = "Test Two alert policy managed by Terraform"
 
         nrql_conditions = {
           "required-attributes" = {
@@ -77,28 +77,28 @@ run "basic" {
   }
 
   assert {
-    condition     = length(newrelic_alert_policy.default["example-one"]) > 0
-    error_message = "Alert policy 'example-one' has not been created"
+    condition     = length(newrelic_alert_policy.default["test-one"]) > 0
+    error_message = "Alert policy 'test-one' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_alert_policy.default["example-two"]) > 0
-    error_message = "Alert policy 'example-two' has not been created"
+    condition     = length(newrelic_alert_policy.default["test-two"]) > 0
+    error_message = "Alert policy 'test-two' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_nrql_alert_condition.default["example-one/all-attributes"]) > 0
-    error_message = "Alert policy 'example-one/all-attributes' has not been created"
+    condition     = length(newrelic_nrql_alert_condition.default["test-one/all-attributes"]) > 0
+    error_message = "Alert policy 'test-one/all-attributes' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_nrql_alert_condition.default["example-one/required-attributes"]) > 0
-    error_message = "Alert policy 'example-one/required-attributes' has not been created"
+    condition     = length(newrelic_nrql_alert_condition.default["test-one/required-attributes"]) > 0
+    error_message = "Alert policy 'test-one/required-attributes' has not been created"
   }
 
   assert {
-    condition     = length(newrelic_nrql_alert_condition.default["example-two/required-attributes"]) > 0
-    error_message = "Alert policy 'example-two/required-attributes' has not been created"
+    condition     = length(newrelic_nrql_alert_condition.default["test-two/required-attributes"]) > 0
+    error_message = "Alert policy 'test-two/required-attributes' has not been created"
   }
 }
 
@@ -107,8 +107,8 @@ run "missing_terms" {
 
   variables {
     policies = {
-      "example-three" = {
-        name = "Example Three"
+      "test-three" = {
+        name = "Test Three"
 
         nrql_conditions = {
           "missing-terms" = {

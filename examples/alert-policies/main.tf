@@ -2,8 +2,8 @@ module "example" {
   source = "../../modules/alert-policies"
 
   policies = {
-    "alice" = {
-      name                = "Alice"
+    "Example" = {
+      name                = "Example"
       description         = "Example alert policy managed by Terraform"
       incident_preference = "PER_POLICY"
 
