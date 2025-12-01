@@ -29,9 +29,7 @@ jobs:
 
       - run: terraform fmt -check
 
-      - run: terraform init
-
-      - run: terraform validate
+      - run: terraform init && terraform validate
 
   test:
     runs-on: ubuntu-latest
@@ -46,20 +44,11 @@ jobs:
         with:
           terraform_version: "1.7.0"
 
-      - run: terraform init
+      - run: terraform init && terraform test
         working-directory: ./modules/alert-policies
 
-      - run: terraform test
-        working-directory: ./modules/alert-policies
-
-      - run: terraform init
+      - run: terraform init && terraform test
         working-directory: ./modules/alert-notifications
 
-      - run: terraform test
-        working-directory: ./modules/alert-notifications
-
-      - run: terraform init
-        working-directory: ./modules/dashboards
-
-      - run: terraform test
+      - run: terraform init && terraform test
         working-directory: ./modules/dashboards
