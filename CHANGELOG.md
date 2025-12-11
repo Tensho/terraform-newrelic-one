@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.2.0...v1.3.0) (2025-12-11)
+
+
+### Features
+
+* **synthetic-monitors:** add simple, basic, broken links, script browser, script api, cert check, step ([7a061a5](https://github.com/Tensho/terraform-newrelic-one/commit/7a061a5d1336b5cc529067e73f590d9d565e62e5))
+
 ## [1.2.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.1.1...v1.2.0) (2025-12-01)
 
 
