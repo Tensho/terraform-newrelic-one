@@ -98,9 +98,9 @@ Consider environment variables management for Terraform provider authentication 
 picks up automatically:
 
 ```
+NEW_RELIC_REGION=US
 NEW_RELIC_ACCOUNT_ID=<REDACTED>
 NEW_RELIC_API_KEY=<REDACTED>
-NEW_RELIC_REGION=US
 ```
 
 ##### NewRelic
@@ -119,6 +119,14 @@ terraform init
 terraform test
 
 cd modules/alert-notifications
+terraform init
+terraform test
+
+cd modules/dashboards
+terraform init
+terraform test
+
+cd modules/synthetics-monitors
 terraform init
 terraform test
 ```
