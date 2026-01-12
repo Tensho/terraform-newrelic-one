@@ -55,3 +55,6 @@ jobs:
 
       - run: terraform init && terraform test
         working-directory: ./modules/synthetic-monitors
+
+      - run: terraform init && terraform test
+        working-directory: ./modules/account-management

@@ -77,6 +77,8 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 * [x] [NewRelic workflows](https://docs.newrelic.com/docs/alerts-applied-intelligence/applied-intelligence/incident-workflows/incident-workflows/)
 * [x] [NewRelic dashboards](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/)
 * [x] [NewRelic synthetics monitors](https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/using-monitors/intro-synthetic-monitoring/)
+* [x] [NewRelic account management](https://docs.newrelic.com/docs/accounts/accounts-billing/account-structure/add-accounts/)
+* [ ] [NewRelic tags](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/use-tags-help-organize-find-your-data/)
 
 ## Contributing
 
@@ -127,6 +129,10 @@ terraform init
 terraform test
 
 cd modules/synthetics-monitors
+terraform init
+terraform test
+
+cd modules/account-management
 terraform init
 terraform test
 ```
