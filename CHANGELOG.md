@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.3.0...v1.4.0) (2026-01-12)
+
+
+### Features
+
+* **account-management:** create/update subaccount ([1c454d4](https://github.com/Tensho/terraform-newrelic-one/commit/1c454d47d2d0b4c09397df77a641746ca54777a7))
+
 ## [1.3.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.2.0...v1.3.0) (2025-12-11)
 
 
