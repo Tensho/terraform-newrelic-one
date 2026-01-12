@@ -44,17 +44,22 @@ jobs:
         with:
           terraform_version: "1.7.0"
 
-      - run: terraform init && terraform test
+      - name: Test alert policies
+        run: terraform init && terraform test
         working-directory: ./modules/alert-policies
 
-      - run: terraform init && terraform test
+      - name: Test alert notifications
+        run: terraform init && terraform test
         working-directory: ./modules/alert-notifications
 
-      - run: terraform init && terraform test
+      - name: Test dashboards
+        run: terraform init && terraform test
         working-directory: ./modules/dashboards
 
-      - run: terraform init && terraform test
+      - name: Test synthetic monitors
+        run: terraform init && terraform test
         working-directory: ./modules/synthetic-monitors
 
-      - run: terraform init && terraform test
+      - name: Test account management
+        run: terraform init && terraform test
         working-directory: ./modules/account-management
