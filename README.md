@@ -90,7 +90,7 @@ This project uses [conventional commits](https://www.conventionalcommits.org/en/
 
 ```shell
 mise install
-pre-commit install --install-hooks
+prek install
 tflint --init
 ```
 
