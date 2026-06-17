@@ -71,7 +71,7 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 
 ## Features
 
-* [x] [NewRelic alert policies](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-policies/)
+* [x] [NewRelic alert policies](https://docs.newrelic.com/docs/alerts/organize-alerts/create-edit-or-find-alert-policy/)
 * [x] [NewRelic NRQL conditions](https://docs.newrelic.com/docs/alerts-applied-intelligence/new-relic-alerts/alert-conditions/create-nrql-alert-conditions/)
 * [x] [NewRelic notification channels](https://docs.newrelic.com/docs/alerts-applied-intelligence/notifications/intro-notifications/)
 * [x] [NewRelic workflows](https://docs.newrelic.com/docs/alerts-applied-intelligence/applied-intelligence/incident-workflows/incident-workflows/)
