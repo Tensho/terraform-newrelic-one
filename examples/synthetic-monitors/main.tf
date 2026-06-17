@@ -1,5 +1,5 @@
 module "example" {
-  source = "../../modules/synthetics-monitors"
+  source = "../../modules/synthetic-monitors"
 
   synthetics_monitors = {
     simple = {
