@@ -22,12 +22,10 @@ run "basic" {
             }
           ]
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -56,12 +54,10 @@ run "basic" {
             }
           ]
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -76,12 +72,10 @@ run "basic" {
           runtime_type         = "NODE_API"
           runtime_type_version = "16.10"
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -99,12 +93,10 @@ run "basic" {
           script                                  = "$browser.get('https://test.com');"
           devices                                 = ["DESKTOP", "TABLET_LANDSCAPE", "MOBILE_PORTRAIT", "TABLET_LANDSCAPE", "TABLET_PORTRAIT"]
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -120,12 +112,10 @@ run "basic" {
           script_language      = "JAVASCRIPT"
           script               = "$http.get('https://test.com');"
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -141,12 +131,10 @@ run "basic" {
           runtime_type         = "NODE_API"
           runtime_type_version = "16.10"
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
 
@@ -176,12 +164,10 @@ run "basic" {
             }
           ]
 
-          tag = [
-            {
-              key    = "environment"
-              values = ["test"]
-            }
-          ]
+          tags = {
+            environment = ["test"]
+            team        = ["platform", "sre"]
+          }
         }
       }
     }

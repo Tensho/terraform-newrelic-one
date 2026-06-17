@@ -35,10 +35,7 @@ variable "synthetics_monitors" {
       value = string
     })), [])
 
-    tag = optional(list(object({
-      key    = string
-      values = list(string)
-    })), [])
+    tags = optional(map(list(string)), {})
   })))
 
   default = {}

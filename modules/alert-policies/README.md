@@ -12,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | 3.75.4 |
+| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | ~> 3.0 |
 
 ## Modules
 
@@ -23,13 +23,15 @@ No modules.
 | Name | Type |
 |------|------|
 | [newrelic_alert_policy.default](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/alert_policy) | resource |
+| [newrelic_entity_tags.condition](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/entity_tags) | resource |
+| [newrelic_entity_tags.policy](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/entity_tags) | resource |
 | [newrelic_nrql_alert_condition.default](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/nrql_alert_condition) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_policies"></a> [policies](#input\_policies) | Alert policies with NRQL conditions. | <pre>map(object({<br/>    name                = string<br/>    description         = optional(string)<br/>    incident_preference = optional(string)<br/><br/>    nrql_conditions = map(object({<br/>      name        = string<br/>      description = optional(string)<br/>      enabled     = optional(bool, true)<br/><br/>      nrql = object({<br/>        query = string<br/>      })<br/><br/>      critical = optional(object({<br/>        operator              = string<br/>        threshold             = number<br/>        threshold_duration    = number<br/>        threshold_occurrences = string<br/>      }))<br/><br/>      warning = optional(object({<br/>        operator              = string<br/>        threshold             = number<br/>        threshold_duration    = number<br/>        threshold_occurrences = string<br/>      }))<br/><br/>      fill_option        = optional(string)<br/>      fill_value         = optional(number)<br/>      aggregation_window = optional(number)<br/>      aggregation_method = optional(string)<br/>      aggregation_delay  = optional(number)<br/>      type               = optional(string, "static")<br/>    }))<br/>  }))</pre> | `{}` | no |
+| <a name="input_policies"></a> [policies](#input\_policies) | Alert policies with NRQL conditions. | <pre>map(object({<br/>    name                = string<br/>    description         = optional(string)<br/>    incident_preference = optional(string)<br/><br/>    tags = optional(map(list(string)), {})<br/><br/>    nrql_conditions = map(object({<br/>      name        = string<br/>      description = optional(string)<br/>      enabled     = optional(bool, true)<br/><br/>      tags = optional(map(list(string)), {})<br/><br/>      nrql = object({<br/>        query = string<br/>      })<br/><br/>      critical = optional(object({<br/>        operator              = string<br/>        threshold             = number<br/>        threshold_duration    = number<br/>        threshold_occurrences = string<br/>      }))<br/><br/>      warning = optional(object({<br/>        operator              = string<br/>        threshold             = number<br/>        threshold_duration    = number<br/>        threshold_occurrences = string<br/>      }))<br/><br/>      fill_option        = optional(string)<br/>      fill_value         = optional(number)<br/>      aggregation_window = optional(number)<br/>      aggregation_method = optional(string)<br/>      aggregation_delay  = optional(number)<br/>      type               = optional(string, "static")<br/>    }))<br/>  }))</pre> | `{}` | no |
 
 ## Outputs
 

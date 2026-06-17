@@ -6,11 +6,20 @@ run "basic" {
         description         = "Test One alert policy managed by Terraform"
         incident_preference = "PER_POLICY"
 
+        tags = {
+          environment = ["test"]
+          team        = ["platform"]
+        }
+
         nrql_conditions = {
           "all-attributes" = {
             name        = "All Attributes"
             description = "Alert condition with all attributes"
             enabled     = true
+
+            tags = {
+              team = ["sre"]
+            }
 
             nrql = {
               query = "SELECT count(*) FROM TransactionError"
@@ -39,6 +48,10 @@ run "basic" {
           "required-attributes" = {
             name = "Required Attributes"
 
+            tags = {
+              team = ["payments"]
+            }
+
             nrql = {
               query = "SELECT count(*) FROM TransactionError"
             }
@@ -55,6 +68,10 @@ run "basic" {
       "test-two" = {
         name        = "Test Two"
         description = "Test Two alert policy managed by Terraform"
+
+        tags = {
+          environment = ["test"]
+        }
 
         nrql_conditions = {
           "required-attributes" = {
@@ -99,6 +116,26 @@ run "basic" {
   assert {
     condition     = length(newrelic_nrql_alert_condition.default["test-two/required-attributes"]) > 0
     error_message = "Alert policy 'test-two/required-attributes' has not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_entity_tags.policy["test-one"]) > 0
+    error_message = "Tags for policy 'test-one' have not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_entity_tags.policy["test-two"]) > 0
+    error_message = "Tags for policy 'test-two' have not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_entity_tags.condition["test-one/all-attributes"]) > 0
+    error_message = "Tags for condition 'test-one/all-attributes' have not been created"
+  }
+
+  assert {
+    condition     = length(newrelic_entity_tags.condition["test-one/required-attributes"]) > 0
+    error_message = "Tags for condition 'test-one/required-attributes' have not been created"
   }
 }
 

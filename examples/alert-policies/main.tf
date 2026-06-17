@@ -7,11 +7,20 @@ module "example" {
       description         = "Example alert policy managed by Terraform"
       incident_preference = "PER_POLICY"
 
+      tags = {
+        environment = ["production"]
+        team        = ["platform", "sre"]
+      }
+
       nrql_conditions = {
         "high-error-rate" = {
           name        = "High Error Rate"
           description = "Alice has high error rate"
           enabled     = true
+
+          tags = {
+            team = ["sre"]
+          }
 
           nrql = {
             query = "SELECT count(*) FROM TransactionError"
@@ -41,6 +50,10 @@ module "example" {
         "high-response-time" = {
           name        = "High Response Time"
           description = "Alice has high response time"
+
+          tags = {
+            team = ["backend"]
+          }
 
           nrql = {
             query = "SELECT average(duration) FROM Transaction"

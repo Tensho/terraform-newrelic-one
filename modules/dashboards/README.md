@@ -12,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | 3.75.4 |
+| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | ~> 3.4 |
 
 ## Modules
 
@@ -22,13 +22,14 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [newrelic_entity_tags.default](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/entity_tags) | resource |
 | [newrelic_one_dashboard_json.default](https://registry.terraform.io/providers/newrelic/newrelic/latest/docs/resources/one_dashboard_json) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_dashboards"></a> [dashboards](#input\_dashboards) | Dashboards | `map(string)` | `{}` | no |
+| <a name="input_dashboards"></a> [dashboards](#input\_dashboards) | Dashboards | <pre>map(object({<br/>    json = string<br/><br/>    tags = optional(map(list(string)), {})<br/>  }))</pre> | `{}` | no |
 
 ## Outputs
 

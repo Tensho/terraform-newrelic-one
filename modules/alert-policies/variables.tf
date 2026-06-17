@@ -6,10 +6,14 @@ variable "policies" {
     description         = optional(string)
     incident_preference = optional(string)
 
+    tags = optional(map(list(string)), {})
+
     nrql_conditions = map(object({
       name        = string
       description = optional(string)
       enabled     = optional(bool, true)
+
+      tags = optional(map(list(string)), {})
 
       nrql = object({
         query = string
