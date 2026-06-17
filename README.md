@@ -7,7 +7,7 @@ Terraform module to manage [NewRelic One](https://newrelic.com) resources (batte
 ```hcl
 module "example" {
   source  = "Tensho/one/newrelic//modules/alert-policies"
-  version = "1.4.0"
+  version = "1.5.0"
 
   policies = {
     "alice" = {
@@ -15,12 +15,21 @@ module "example" {
       description         = "Example alert policy managed by Terraform"
       incident_preference = "PER_POLICY"
 
+      tags = {
+        environment = ["test"]
+        team        = ["platform", "sre"]
+      }
+      
       nrql_conditions = {
         "high-error-rate" = {
           name        = "High Error Rate"
           description = "Alice has high error rate"
           enabled     = true
-
+          
+          tags = {
+            team = ["sre"]
+          }
+          
           nrql = {
             query = "SELECT count(*) FROM TransactionError"
           }
@@ -50,6 +59,10 @@ module "example" {
           name        = "High Response Time"
           description = "Alice has high response time"
 
+          tags = {
+            team = ["platform"]
+          }
+          
           nrql = {
             query = "SELECT average(duration) FROM Transaction"
           }
