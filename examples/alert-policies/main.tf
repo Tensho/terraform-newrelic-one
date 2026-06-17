@@ -52,7 +52,7 @@ module "example" {
           description = "Alice has high response time"
 
           tags = {
-            team = ["backend"]
+            team = ["platform"]
           }
 
           nrql = {

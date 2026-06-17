@@ -8,7 +8,7 @@ run "basic" {
 
         tags = {
           environment = ["test"]
-          team        = ["platform"]
+          team        = ["platform", "sre"]
         }
 
         nrql_conditions = {
@@ -49,7 +49,7 @@ run "basic" {
             name = "Required Attributes"
 
             tags = {
-              team = ["payments"]
+              team = ["platform"]
             }
 
             nrql = {
@@ -120,22 +120,22 @@ run "basic" {
 
   assert {
     condition     = length(newrelic_entity_tags.policy["test-one"]) > 0
-    error_message = "Tags for policy 'test-one' have not been created"
+    error_message = "Alert policy tags 'test-one' have not been created"
   }
 
   assert {
     condition     = length(newrelic_entity_tags.policy["test-two"]) > 0
-    error_message = "Tags for policy 'test-two' have not been created"
+    error_message = "Alert policy tags 'test-two' have not been created"
   }
 
   assert {
     condition     = length(newrelic_entity_tags.condition["test-one/all-attributes"]) > 0
-    error_message = "Tags for condition 'test-one/all-attributes' have not been created"
+    error_message = "Alert policy condition tags 'test-one/all-attributes' have not been created"
   }
 
   assert {
     condition     = length(newrelic_entity_tags.condition["test-one/required-attributes"]) > 0
-    error_message = "Tags for condition 'test-one/required-attributes' have not been created"
+    error_message = "Alert policy condition tags 'test-one/required-attributes' have not been created"
   }
 }
 
