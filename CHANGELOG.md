@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.4.0...v1.5.0) (2026-06-17)
+
+
+### Features
+
+* **tags:** add per entity ([#7](https://github.com/Tensho/terraform-newrelic-one/issues/7)) ([0ef97ae](https://github.com/Tensho/terraform-newrelic-one/commit/0ef97aed8c6b7ff805d01567661958e8f5c66b0b))
+
 ## [1.4.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.3.0...v1.4.0) (2026-01-12)
 
 
