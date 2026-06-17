@@ -1,5 +1,5 @@
 module "example" {
-  source = "../../modules/synthetics-monitors"
+  source = "../../modules/synthetic-monitors"
 
   synthetics_monitors = {
     simple = {
@@ -23,12 +23,10 @@ module "example" {
           }
         ]
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -57,12 +55,10 @@ module "example" {
           }
         ]
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -77,12 +73,10 @@ module "example" {
         runtime_type         = "NODE_API"
         runtime_type_version = "16.10"
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -100,12 +94,10 @@ module "example" {
         script                                  = "$browser.get('https://example.com');"
         devices                                 = ["DESKTOP", "TABLET_LANDSCAPE", "MOBILE_PORTRAIT", "TABLET_LANDSCAPE", "TABLET_PORTRAIT"]
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -121,12 +113,10 @@ module "example" {
         script_language      = "JAVASCRIPT"
         script               = "$http.get('https://example.com');"
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -141,12 +131,10 @@ module "example" {
         runtime_type           = "NODE_API"
         runtime_type_version   = "16.10"
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
 
@@ -173,12 +161,10 @@ module "example" {
           }
         ]
 
-        tag = [
-          {
-            key    = "environment"
-            values = ["production"]
-          }
-        ]
+        tags = {
+          environment = ["production"]
+          team        = ["platform", "sre"]
+        }
       }
     }
   }

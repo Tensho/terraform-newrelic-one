@@ -12,7 +12,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | 3.75.4 |
+| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | ~> 3.4 |
 
 ## Modules
 

@@ -23,10 +23,11 @@ resource "newrelic_synthetics_monitor" "simple" {
   }
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -58,10 +59,11 @@ resource "newrelic_synthetics_monitor" "browser" {
   }
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -79,10 +81,11 @@ resource "newrelic_synthetics_broken_links_monitor" "default" {
   runtime_type_version = each.value.runtime_type_version
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -104,10 +107,11 @@ resource "newrelic_synthetics_script_monitor" "script_browser" {
   devices                                 = each.value.devices
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -127,10 +131,11 @@ resource "newrelic_synthetics_script_monitor" "script_api" {
   script               = each.value.script
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -149,10 +154,11 @@ resource "newrelic_synthetics_cert_check_monitor" "default" {
   runtime_type_version = each.value.runtime_type_version
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }
@@ -179,10 +185,11 @@ resource "newrelic_synthetics_step_monitor" "default" {
   }
 
   dynamic "tag" {
-    for_each = each.value.tag
+    for_each = each.value.tags
+
     content {
-      key    = tag.value.key
-      values = tag.value.values
+      key    = tag.key
+      values = tag.value
     }
   }
 }

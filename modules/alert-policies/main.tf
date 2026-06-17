@@ -5,6 +5,21 @@ resource "newrelic_alert_policy" "default" {
   incident_preference = each.value.incident_preference
 }
 
+resource "newrelic_entity_tags" "policy" {
+  for_each = { for policy_key, policy in var.policies : policy_key => policy if length(policy.tags) > 0 }
+
+  guid = newrelic_alert_policy.default[each.key].entity_guid
+
+  dynamic "tag" {
+    for_each = each.value.tags
+
+    content {
+      key    = tag.key
+      values = tag.value
+    }
+  }
+}
+
 locals {
   conditions = merge([
     for policy_key, policy in var.policies : {
@@ -58,4 +73,19 @@ resource "newrelic_nrql_alert_condition" "default" {
   aggregation_window = each.value.aggregation_window
   aggregation_method = each.value.aggregation_method
   aggregation_delay  = each.value.aggregation_delay
+}
+
+resource "newrelic_entity_tags" "condition" {
+  for_each = { for condition_key, condition in local.conditions : condition_key => condition if length(condition.tags) > 0 }
+
+  guid = newrelic_nrql_alert_condition.default[each.key].entity_guid
+
+  dynamic "tag" {
+    for_each = each.value.tags
+
+    content {
+      key    = tag.key
+      values = tag.value
+    }
+  }
 }
