@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.5.0...v2.0.0) (2026-06-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* **synthetic-monitors:** rename from plural to singular
+
+### Features
+
+* **entities:** add data module ([#10](https://github.com/Tensho/terraform-newrelic-one/issues/10)) ([b9932ad](https://github.com/Tensho/terraform-newrelic-one/commit/b9932adf8c5149c371ad9ccf790868266e572809))
+
+
+### Bug Fixes
+
+* **synthetic-monitors:** rename from plural to singular ([f7c5ef7](https://github.com/Tensho/terraform-newrelic-one/commit/f7c5ef7c9efdb931516057de92f3b309a605cc26))
+
 ## [1.5.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.4.0...v1.5.0) (2026-06-17)
 
 
