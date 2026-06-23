@@ -59,3 +59,7 @@ jobs:
       - name: Test account management
         run: terraform init && terraform test
         working-directory: ./modules/account-management
+
+      - name: Test entities
+        run: terraform init && terraform test
+        working-directory: ./modules/entities
