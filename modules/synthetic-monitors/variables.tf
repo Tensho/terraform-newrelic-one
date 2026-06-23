@@ -1,5 +1,5 @@
-variable "synthetics_monitors" {
-  description = "Synthetics monitors by type (simple, browser, broken_links, script_browser, script_api, cert_check, step_monitor, etc.)"
+variable "synthetic_monitors" {
+  description = "Synthetic monitors by type (simple, browser, broken_links, script_browser, script_api, cert_check, step_monitor, etc.)"
 
   type = map(map(object({
     name   = string

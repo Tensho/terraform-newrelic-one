@@ -1,7 +1,7 @@
 module "example" {
   source = "../../modules/synthetic-monitors"
 
-  synthetics_monitors = {
+  synthetic_monitors = {
     simple = {
       "example" = {
         name             = "Simple Example"

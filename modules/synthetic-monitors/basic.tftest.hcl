@@ -1,6 +1,6 @@
 run "basic" {
   variables {
-    synthetics_monitors = {
+    synthetic_monitors = {
       simple = {
         "test" = {
           name             = "Simple Test"

@@ -1,5 +1,5 @@
 resource "newrelic_synthetics_monitor" "simple" {
-  for_each = try(var.synthetics_monitors.simple, {})
+  for_each = try(var.synthetic_monitors.simple, {})
 
   name             = each.value.name
   type             = "SIMPLE"
@@ -33,7 +33,7 @@ resource "newrelic_synthetics_monitor" "simple" {
 }
 
 resource "newrelic_synthetics_monitor" "browser" {
-  for_each = try(var.synthetics_monitors.browser, {})
+  for_each = try(var.synthetic_monitors.browser, {})
 
   name             = each.value.name
   type             = "BROWSER"
@@ -69,7 +69,7 @@ resource "newrelic_synthetics_monitor" "browser" {
 }
 
 resource "newrelic_synthetics_broken_links_monitor" "default" {
-  for_each = try(var.synthetics_monitors.broken_links, {})
+  for_each = try(var.synthetic_monitors.broken_links, {})
 
   name             = each.value.name
   status           = each.value.status
@@ -91,7 +91,7 @@ resource "newrelic_synthetics_broken_links_monitor" "default" {
 }
 
 resource "newrelic_synthetics_script_monitor" "script_browser" {
-  for_each = try(var.synthetics_monitors.script_browser, {})
+  for_each = try(var.synthetic_monitors.script_browser, {})
 
   name             = each.value.name
   type             = "SCRIPT_BROWSER"
@@ -117,7 +117,7 @@ resource "newrelic_synthetics_script_monitor" "script_browser" {
 }
 
 resource "newrelic_synthetics_script_monitor" "script_api" {
-  for_each = try(var.synthetics_monitors.script_api, {})
+  for_each = try(var.synthetic_monitors.script_api, {})
 
   name             = each.value.name
   type             = "SCRIPT_API"
@@ -141,7 +141,7 @@ resource "newrelic_synthetics_script_monitor" "script_api" {
 }
 
 resource "newrelic_synthetics_cert_check_monitor" "default" {
-  for_each = try(var.synthetics_monitors.cert_check, {})
+  for_each = try(var.synthetic_monitors.cert_check, {})
 
   name                   = each.value.name
   status                 = each.value.status
@@ -164,7 +164,7 @@ resource "newrelic_synthetics_cert_check_monitor" "default" {
 }
 
 resource "newrelic_synthetics_step_monitor" "default" {
-  for_each = try(var.synthetics_monitors.step_monitor, {})
+  for_each = try(var.synthetic_monitors.step_monitor, {})
 
   name                                    = each.value.name
   status                                  = each.value.status
