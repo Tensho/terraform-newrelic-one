@@ -89,64 +89,11 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 * [x] [NewRelic notification channels](https://docs.newrelic.com/docs/alerts-applied-intelligence/notifications/intro-notifications/)
 * [x] [NewRelic workflows](https://docs.newrelic.com/docs/alerts-applied-intelligence/applied-intelligence/incident-workflows/incident-workflows/)
 * [x] [NewRelic dashboards](https://docs.newrelic.com/docs/query-your-data/explore-query-data/dashboards/introduction-dashboards/)
-* [x] [NewRelic synthetics monitors](https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/using-monitors/intro-synthetic-monitoring/)
+* [x] [NewRelic synthetic monitors](https://docs.newrelic.com/docs/synthetics/synthetic-monitoring/using-monitors/intro-synthetic-monitoring/)
 * [x] [NewRelic account management](https://docs.newrelic.com/docs/accounts/accounts-billing/account-structure/add-accounts/)
 * [x] [NewRelic tags](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/use-tags-help-organize-find-your-data/)
 * [ ] [NewRelic API access key](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/)
 
 ## Contributing
 
-This project uses [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).
-
-### Prerequisites
-
-#### MacOS
-
-```shell
-mise install
-prek install
-tflint --init
-```
-
-#### Provider Authentication
-
-Consider environment variables management for Terraform provider authentication via `.env` file, which [mise](https://mise.jdx.dev/)
-picks up automatically:
-
-```
-NEW_RELIC_REGION=US
-NEW_RELIC_ACCOUNT_ID=<REDACTED>
-NEW_RELIC_API_KEY=<REDACTED>
-```
-
-##### NewRelic
-
-```shell
-export NEW_RELIC_REGION=US
-export NEW_RELIC_ACCOUNT_ID=<REDACTED>
-export NEW_RELIC_API_KEY=<REDACTED>
-```
-
-### Testing
-
-```shell
-cd modules/alert-policies
-terraform init
-terraform test
-
-cd modules/alert-notifications
-terraform init
-terraform test
-
-cd modules/dashboards
-terraform init
-terraform test
-
-cd modules/synthetics-monitors
-terraform init
-terraform test
-
-cd modules/account-management
-terraform init
-terraform test
-```
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup and testing instructions.
