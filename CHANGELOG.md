@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.0.0...v2.1.0) (2026-06-25)
+
+
+### Features
+
+* **alert-policies:** add baseline and incident expiration condition attributes ([#11](https://github.com/Tensho/terraform-newrelic-one/issues/11)) ([9684148](https://github.com/Tensho/terraform-newrelic-one/commit/9684148457dd45a7eed9962e84a7f6cd9f1d2b92))
+
 ## [2.0.0](https://github.com/Tensho/terraform-newrelic-one/compare/v1.5.0...v2.0.0) (2026-06-23)
 
 
