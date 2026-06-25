@@ -37,10 +37,16 @@ resource "newrelic_nrql_alert_condition" "default" {
 
   policy_id = tonumber(newrelic_alert_policy.default[each.value.policy_key].id)
 
-  type        = each.value.type
+  type = each.value.type
+
+  baseline_direction = each.value.baseline_direction
+
   name        = each.value.name
   description = each.value.description
   enabled     = each.value.enabled
+
+  title_template = each.value.title_template
+  runbook_url    = each.value.runbook_url
 
   nrql {
     query = each.value.nrql.query
@@ -73,6 +79,11 @@ resource "newrelic_nrql_alert_condition" "default" {
   aggregation_window = each.value.aggregation_window
   aggregation_method = each.value.aggregation_method
   aggregation_delay  = each.value.aggregation_delay
+
+  expiration_duration            = each.value.expiration_duration
+  close_violations_on_expiration = each.value.close_violations_on_expiration
+  ignore_on_expected_termination = each.value.ignore_on_expected_termination
+  violation_time_limit_seconds   = each.value.violation_time_limit_seconds
 }
 
 resource "newrelic_entity_tags" "condition" {

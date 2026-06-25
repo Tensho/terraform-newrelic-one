@@ -17,6 +17,13 @@ run "basic" {
             description = "Alert condition with all attributes"
             enabled     = true
 
+            type = "baseline"
+
+            baseline_direction = "upper_only"
+
+            title_template = "All Attributes"
+            runbook_url    = "https://example.com/runbook"
+
             tags = {
               team = ["sre"]
             }
@@ -33,7 +40,7 @@ run "basic" {
             }
 
             warning = {
-              operator              = "above_or_equals"
+              operator              = "above"
               threshold             = 42
               threshold_duration    = 600
               threshold_occurrences = "AT_LEAST_ONCE"
@@ -44,6 +51,11 @@ run "basic" {
             aggregation_window = 60
             aggregation_method = "event_flow"
             aggregation_delay  = 120
+
+            expiration_duration            = 120
+            close_violations_on_expiration = true
+            ignore_on_expected_termination = true
+            violation_time_limit_seconds   = 86400
           },
           "required-attributes" = {
             name = "Required Attributes"

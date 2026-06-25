@@ -14,10 +14,17 @@ module "example" {
       }
 
       nrql_conditions = {
-        "high-error-rate" = {
-          name        = "High Error Rate"
-          description = "Alice has high error rate"
+        "all-attributes" = {
+          name        = "All Attributes"
+          description = "Alert condition with all attributes"
           enabled     = true
+
+          type = "baseline"
+
+          baseline_direction = "upper_only"
+
+          title_template = "All Attributes"
+          runbook_url    = "https://example.com/runbooks/all-attributes"
 
           tags = {
             team = ["sre"]
@@ -35,7 +42,7 @@ module "example" {
           }
 
           warning = {
-            operator              = "above_or_equals"
+            operator              = "above"
             threshold             = 42
             threshold_duration    = 300
             threshold_occurrences = "AT_LEAST_ONCE"
@@ -47,21 +54,21 @@ module "example" {
           aggregation_window = 60
           aggregation_method = "event_flow"
           aggregation_delay  = 120
-        },
-        "high-response-time" = {
-          name        = "High Response Time"
-          description = "Alice has high response time"
 
-          tags = {
-            team = ["platform"]
-          }
+          expiration_duration            = 120
+          close_violations_on_expiration = true
+          ignore_on_expected_termination = true
+          violation_time_limit_seconds   = 86400
+        },
+        "required-attributes" = {
+          name = "Required Attributes"
 
           nrql = {
-            query = "SELECT average(duration) FROM Transaction"
+            query = "SELECT count(*) FROM TransactionError"
           }
 
           critical = {
-            operator              = "above_or_equals"
+            operator              = "above"
             threshold             = 42
             threshold_duration    = 600
             threshold_occurrences = "ALL"
