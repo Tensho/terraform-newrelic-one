@@ -13,6 +13,9 @@ variable "policies" {
       description = optional(string)
       enabled     = optional(bool, true)
 
+      title_template = optional(string)
+      runbook_url    = optional(string)
+
       tags = optional(map(list(string)), {})
 
       nrql = object({
@@ -38,7 +41,15 @@ variable "policies" {
       aggregation_window = optional(number)
       aggregation_method = optional(string)
       aggregation_delay  = optional(number)
-      type               = optional(string, "static")
+
+      type = optional(string, "static")
+
+      baseline_direction = optional(string)
+
+      expiration_duration            = optional(number)
+      close_violations_on_expiration = optional(bool)
+      ignore_on_expected_termination = optional(bool)
+      violation_time_limit_seconds   = optional(number)
     }))
   }))
 
