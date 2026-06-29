@@ -26,12 +26,12 @@ run "basic" {
 
   assert {
     condition     = length(newrelic_api_access_key.default["license"]) > 0
-    error_message = "API access key 'ingest-license' has not been created"
+    error_message = "API access key 'license' has not been created"
   }
 
   assert {
     condition     = length(newrelic_api_access_key.default["browser"]) > 0
-    error_message = "API access key 'ingest-browser' has not been created"
+    error_message = "API access key 'ingest' has not been created"
   }
 
   assert {
