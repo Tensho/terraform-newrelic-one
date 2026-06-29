@@ -50,3 +50,7 @@ jobs:
       - name: Test entities
         run: terraform init && terraform test
         working-directory: ./modules/entities
+
+      - name: Test API access keys
+        run: terraform init && terraform test
+        working-directory: ./modules/api-access-key
