@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.1.0...v2.2.0) (2026-06-29)
+
+
+### Features
+
+* **api-access-key:** add module ([#13](https://github.com/Tensho/terraform-newrelic-one/issues/13)) ([ea5c02c](https://github.com/Tensho/terraform-newrelic-one/commit/ea5c02c1a2090af1a64f817acba043a9c721307b))
+
 ## [2.1.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.0.0...v2.1.0) (2026-06-25)
 
 
