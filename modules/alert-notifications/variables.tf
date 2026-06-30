@@ -58,7 +58,10 @@ variable "workflows" {
       name = string
       type = string
 
-      destination_key = string
+      # Reference a destination in the same module (destination_key)
+      destination_key = optional(string)
+      # Rereference a destination in other module (destination_id)
+      destination_id = optional(string)
 
       properties = optional(list(object({
         key           = string
