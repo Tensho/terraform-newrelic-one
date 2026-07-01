@@ -3,7 +3,6 @@ run "basic" {
     policies = {
       "test-one" = {
         name                = "Test One"
-        description         = "Test One alert policy managed by Terraform"
         incident_preference = "PER_POLICY"
 
         tags = {
@@ -78,8 +77,7 @@ run "basic" {
         }
       }
       "test-two" = {
-        name        = "Test Two"
-        description = "Test Two alert policy managed by Terraform"
+        name = "Test Two"
 
         tags = {
           environment = ["test"]
