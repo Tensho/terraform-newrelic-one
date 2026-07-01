@@ -3,21 +3,21 @@ run "basic" {
     api_access_keys = {
       "license" = {
         key_type    = "INGEST"
-        account_id  = 183613
+        account_id  = 7479170
         ingest_type = "LICENSE"
         name        = "Test License Key"
       }
 
       "browser" = {
         key_type    = "INGEST"
-        account_id  = 183613
+        account_id  = 7479170
         ingest_type = "BROWSER"
         name        = "Test Browser Key"
       }
 
       "user" = {
         key_type   = "USER"
-        account_id = 183613
+        account_id = 7479170
         user_id    = 1002813544
         name       = "Test User Key"
       }
