@@ -3,7 +3,6 @@ variable "policies" {
 
   type = map(object({
     name                = string
-    description         = optional(string)
     incident_preference = optional(string)
 
     tags = optional(map(list(string)), {})
