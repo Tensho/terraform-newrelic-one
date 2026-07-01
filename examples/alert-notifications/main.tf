@@ -99,7 +99,67 @@ module "example" {
             }
           ]
         }
+
+        "external" = {
+          name = "External"
+          type = "WEBHOOK"
+
+          # Reference a destination declared in this module's destinations by key.
+          # Cross-module reference by raw id is shown in module.external below.
+          destination_key = "webhook"
+
+          properties = [
+            {
+              key   = "payload"
+              value = "{ \"event_action\": \"trigger\" }"
+              label = "Payload Template"
+            }
+          ]
+        }
       }
     }
   }
 }
+
+# tflint-ignore: terraform_required_version
+module "external" {
+  source = "../../modules/alert-notifications"
+
+  workflows = {
+    "external" = {
+      name = "External"
+
+      muting_rules_handling = "NOTIFY_ALL_ISSUES"
+
+      issues_filter = {
+        name = "external"
+
+        predicates = [
+          {
+            attribute = "priority"
+            operator  = "EQUAL"
+            values    = ["CRITICAL"]
+          },
+        ]
+      }
+
+      notification_channels = {
+        "external" = {
+          name = "External"
+          type = "WEBHOOK"
+
+          destination_id = module.example.destination_ids["webhook"]
+
+          properties = [
+            {
+              key   = "payload"
+              value = "{ \"event_action\": \"trigger\" }"
+              label = "Payload Template"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+

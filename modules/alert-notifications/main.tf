@@ -70,7 +70,7 @@ resource "newrelic_notification_channel" "default" {
   name = each.value.name
   type = each.value.type
 
-  destination_id = newrelic_notification_destination.default[each.value.destination_key].id
+  destination_id = each.value.destination_id != null ? each.value.destination_id : newrelic_notification_destination.default[each.value.destination_key].id
 
   product = "IINT"
 
