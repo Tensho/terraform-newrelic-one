@@ -45,7 +45,6 @@ variable "workflows" {
 
     issues_filter = object({
       name = string
-      type = optional(string)
 
       predicates = list(object({
         attribute = string
