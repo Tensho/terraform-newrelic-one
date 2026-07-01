@@ -92,6 +92,7 @@ run "basic" {
           script_language                         = "JAVASCRIPT"
           script                                  = "$browser.get('https://test.com');"
           devices                                 = ["DESKTOP", "TABLET_LANDSCAPE", "MOBILE_PORTRAIT", "TABLET_LANDSCAPE", "TABLET_PORTRAIT"]
+          browsers                                = ["CHROME", "FIREFOX"]
 
           tags = {
             environment = ["test"]
