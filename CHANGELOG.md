@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.3.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.2.0...v2.3.0) (2026-07-01)
+
+
+### Features
+
+* **alert-notifications:** reference external destination by id on channels ([#15](https://github.com/Tensho/terraform-newrelic-one/issues/15)) ([06cb81d](https://github.com/Tensho/terraform-newrelic-one/commit/06cb81db6f6e2b12c2a7104f61239a61a6c6ea07))
+
 ## [2.2.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.1.0...v2.2.0) (2026-06-29)
 
 
