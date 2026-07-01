@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.3.1](https://github.com/Tensho/terraform-newrelic-one/compare/v2.3.0...v2.3.1) (2026-07-01)
+
+
+### Bug Fixes
+
+* **alert-notifications:** remove dead issues_filter type attribute ([#19](https://github.com/Tensho/terraform-newrelic-one/issues/19)) ([682f70f](https://github.com/Tensho/terraform-newrelic-one/commit/682f70fe0605a286851a95088c4e2de9b293351e))
+* **alert-policies:** remove unsupported policy description attribute ([#17](https://github.com/Tensho/terraform-newrelic-one/issues/17)) ([0853d08](https://github.com/Tensho/terraform-newrelic-one/commit/0853d08ccb08d3d0b33477b88e653a46f8c752dd))
+* **api-access-key:** target Example sub-account instead of parent ([5be8953](https://github.com/Tensho/terraform-newrelic-one/commit/5be89539fc96da4ba2371f27a72c75230a832407))
+* **synthetic-monitors:** wire browsers into browser-class monitors ([#18](https://github.com/Tensho/terraform-newrelic-one/issues/18)) ([cf60571](https://github.com/Tensho/terraform-newrelic-one/commit/cf60571c250a053e3b7ab1163058cc9e4a2a09ab))
+
 ## [2.3.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.2.0...v2.3.0) (2026-07-01)
 
 
