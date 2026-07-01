@@ -49,6 +49,7 @@ resource "newrelic_synthetics_monitor" "browser" {
   runtime_type_version                    = each.value.runtime_type_version
   runtime_type                            = each.value.runtime_type
   script_language                         = each.value.script_language
+  browsers                                = each.value.browsers
 
   dynamic "custom_header" {
     for_each = each.value.custom_header
@@ -105,6 +106,7 @@ resource "newrelic_synthetics_script_monitor" "script_browser" {
   script_language                         = each.value.script_language
   script                                  = each.value.script
   devices                                 = each.value.devices
+  browsers                                = each.value.browsers
 
   dynamic "tag" {
     for_each = each.value.tags
@@ -173,6 +175,7 @@ resource "newrelic_synthetics_step_monitor" "default" {
   enable_screenshot_on_failure_and_script = each.value.enable_screenshot_on_failure_and_script
   runtime_type                            = each.value.runtime_type
   runtime_type_version                    = each.value.runtime_type_version
+  browsers                                = each.value.browsers
 
   dynamic "steps" {
     for_each = each.value.steps
