@@ -7,6 +7,13 @@ on:
     paths-ignore:
       - '**.md'
 
+# Tests apply real resources against the shared Example sub-account, so every
+# run across every branch must serialize. A static group (queuing, not
+# cancelling) stops two runs from racing on the same account.
+concurrency:
+  group: newrelic-integration-test
+  cancel-in-progress: false
+
 env:
   NEW_RELIC_ACCOUNT_ID: ${{ secrets.NEW_RELIC_ACCOUNT_ID }}
   NEW_RELIC_API_KEY: ${{ secrets.NEW_RELIC_API_KEY }}
@@ -20,6 +27,19 @@ jobs:
     runs-on: ubuntu-latest
     env:
       TF_INPUT: false
+    strategy:
+      fail-fast: false
+      # Matrix legs share the account too; run one at a time.
+      max-parallel: 1
+      matrix:
+        module:
+          - alert-policies
+          - alert-notifications
+          - dashboards
+          - synthetic-monitors
+          - account-management
+          - entities
+          - api-access-key
     steps:
       - uses: actions/checkout@v5
 
@@ -27,30 +47,6 @@ jobs:
         with:
           terraform_version: "1.7.0"
 
-      - name: Test alert policies
+      - name: Test ${{ matrix.module }}
         run: terraform init && terraform test
-        working-directory: ./modules/alert-policies
-
-      - name: Test alert notifications
-        run: terraform init && terraform test
-        working-directory: ./modules/alert-notifications
-
-      - name: Test dashboards
-        run: terraform init && terraform test
-        working-directory: ./modules/dashboards
-
-      - name: Test synthetic monitors
-        run: terraform init && terraform test
-        working-directory: ./modules/synthetic-monitors
-
-      - name: Test account management
-        run: terraform init && terraform test
-        working-directory: ./modules/account-management
-
-      - name: Test entities
-        run: terraform init && terraform test
-        working-directory: ./modules/entities
-
-      - name: Test API access keys
-        run: terraform init && terraform test
-        working-directory: ./modules/api-access-key
+        working-directory: ./modules/${{ matrix.module }}
