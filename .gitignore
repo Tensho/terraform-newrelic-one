@@ -6,3 +6,5 @@ terraform.tfstate*
 
 .claude
 CLAUDE.md
+
+fnox.local.toml
