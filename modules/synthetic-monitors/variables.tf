@@ -39,4 +39,13 @@ variable "synthetic_monitors" {
   })))
 
   default = {}
+
+  validation {
+    condition = alltrue([
+      for monitors in var.synthetic_monitors : alltrue([
+        for monitor in monitors : contains(["ENABLED", "DISABLED"], monitor.status)
+      ])
+    ])
+    error_message = "status must be either 'ENABLED' or 'DISABLED'."
+  }
 }

@@ -72,4 +72,14 @@ variable "workflows" {
   }))
 
   default = {}
+
+  validation {
+    condition = alltrue([
+      for workflow in var.workflows : alltrue([
+        for channel in workflow.notification_channels :
+        (channel.destination_key != null) != (channel.destination_id != null)
+      ])
+    ])
+    error_message = "Each notification channel must set exactly one of destination_key or destination_id."
+  }
 }
