@@ -6,13 +6,13 @@
 | Name | Version |
 | ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.7.0 |
-| <a name="requirement_newrelic"></a> [newrelic](#requirement\_newrelic) | ~> 3.0 |
+| <a name="requirement_newrelic"></a> [newrelic](#requirement\_newrelic) | ~> 3.4 |
 
 ## Providers
 
 | Name | Version |
 | ---- | ------- |
-| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | ~> 3.0 |
+| <a name="provider_newrelic"></a> [newrelic](#provider\_newrelic) | ~> 3.4 |
 
 ## Modules
 
