@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.4.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.3.1...v2.4.0) (2026-07-20)
+
+
+### Features
+
+* **validation:** guard notification-channel and monitor-status inputs ([00890ae](https://github.com/Tensho/terraform-newrelic-one/commit/00890aeffd789d7d170463938fad9e12993a88f3))
+
 ## [2.3.1](https://github.com/Tensho/terraform-newrelic-one/compare/v2.3.0...v2.3.1) (2026-07-01)
 
 
