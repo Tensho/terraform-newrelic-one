@@ -19,6 +19,7 @@ run "basic" {
             type = "baseline"
 
             baseline_direction = "upper_only"
+            signal_seasonality = "NEW_RELIC_CALCULATION"
 
             title_template = "All Attributes"
             runbook_url    = "https://example.com/runbook"
@@ -39,10 +40,11 @@ run "basic" {
             }
 
             warning = {
-              operator              = "above"
-              threshold             = 42
-              threshold_duration    = 600
-              threshold_occurrences = "AT_LEAST_ONCE"
+              operator                        = "above"
+              threshold                       = 42
+              threshold_duration              = 600
+              threshold_occurrences           = "AT_LEAST_ONCE"
+              disable_health_status_reporting = true
             }
 
             fill_option        = "static"
@@ -50,8 +52,11 @@ run "basic" {
             aggregation_window = 60
             aggregation_method = "event_flow"
             aggregation_delay  = 120
+            evaluation_delay   = 60
+            slide_by           = 30
 
             expiration_duration            = 120
+            open_violation_on_expiration   = true
             close_violations_on_expiration = true
             ignore_on_expected_termination = true
             violation_time_limit_seconds   = 86400

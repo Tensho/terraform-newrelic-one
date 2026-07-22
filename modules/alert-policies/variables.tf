@@ -18,21 +18,24 @@ variable "policies" {
       tags = optional(map(list(string)), {})
 
       nrql = object({
-        query = string
+        query           = string
+        data_account_id = optional(number)
       })
 
       critical = optional(object({
-        operator              = string
-        threshold             = number
-        threshold_duration    = number
-        threshold_occurrences = string
+        operator                        = string
+        threshold                       = number
+        threshold_duration              = number
+        threshold_occurrences           = string
+        disable_health_status_reporting = optional(bool)
       }))
 
       warning = optional(object({
-        operator              = string
-        threshold             = number
-        threshold_duration    = number
-        threshold_occurrences = string
+        operator                        = string
+        threshold                       = number
+        threshold_duration              = number
+        threshold_occurrences           = string
+        disable_health_status_reporting = optional(bool)
       }))
 
       fill_option        = optional(string)
@@ -40,12 +43,17 @@ variable "policies" {
       aggregation_window = optional(number)
       aggregation_method = optional(string)
       aggregation_delay  = optional(number)
+      aggregation_timer  = optional(number)
+      evaluation_delay   = optional(number)
+      slide_by           = optional(number)
 
       type = optional(string, "static")
 
       baseline_direction = optional(string)
+      signal_seasonality = optional(string)
 
       expiration_duration            = optional(number)
+      open_violation_on_expiration   = optional(bool)
       close_violations_on_expiration = optional(bool)
       ignore_on_expected_termination = optional(bool)
       violation_time_limit_seconds   = optional(number)
