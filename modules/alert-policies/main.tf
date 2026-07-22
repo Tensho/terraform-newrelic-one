@@ -40,6 +40,7 @@ resource "newrelic_nrql_alert_condition" "default" {
   type = each.value.type
 
   baseline_direction = each.value.baseline_direction
+  signal_seasonality = each.value.signal_seasonality
 
   name        = each.value.name
   description = each.value.description
@@ -49,17 +50,19 @@ resource "newrelic_nrql_alert_condition" "default" {
   runbook_url    = each.value.runbook_url
 
   nrql {
-    query = each.value.nrql.query
+    query           = each.value.nrql.query
+    data_account_id = each.value.nrql.data_account_id
   }
 
   dynamic "critical" {
     for_each = each.value.critical != null ? [each.value.critical] : []
 
     content {
-      operator              = critical.value.operator
-      threshold             = critical.value.threshold
-      threshold_duration    = critical.value.threshold_duration
-      threshold_occurrences = critical.value.threshold_occurrences
+      operator                        = critical.value.operator
+      threshold                       = critical.value.threshold
+      threshold_duration              = critical.value.threshold_duration
+      threshold_occurrences           = critical.value.threshold_occurrences
+      disable_health_status_reporting = critical.value.disable_health_status_reporting
     }
   }
 
@@ -67,10 +70,11 @@ resource "newrelic_nrql_alert_condition" "default" {
     for_each = each.value.warning != null ? [each.value.warning] : []
 
     content {
-      operator              = warning.value.operator
-      threshold             = warning.value.threshold
-      threshold_duration    = warning.value.threshold_duration
-      threshold_occurrences = warning.value.threshold_occurrences
+      operator                        = warning.value.operator
+      threshold                       = warning.value.threshold
+      threshold_duration              = warning.value.threshold_duration
+      threshold_occurrences           = warning.value.threshold_occurrences
+      disable_health_status_reporting = warning.value.disable_health_status_reporting
     }
   }
 
@@ -79,8 +83,12 @@ resource "newrelic_nrql_alert_condition" "default" {
   aggregation_window = each.value.aggregation_window
   aggregation_method = each.value.aggregation_method
   aggregation_delay  = each.value.aggregation_delay
+  aggregation_timer  = each.value.aggregation_timer
+  evaluation_delay   = each.value.evaluation_delay
+  slide_by           = each.value.slide_by
 
   expiration_duration            = each.value.expiration_duration
+  open_violation_on_expiration   = each.value.open_violation_on_expiration
   close_violations_on_expiration = each.value.close_violations_on_expiration
   ignore_on_expected_termination = each.value.ignore_on_expected_termination
   violation_time_limit_seconds   = each.value.violation_time_limit_seconds
