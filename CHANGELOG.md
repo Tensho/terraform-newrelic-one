@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.5.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.4.0...v2.5.0) (2026-07-22)
+
+
+### Features
+
+* **alert-policies:** add missing attributes ([#23](https://github.com/Tensho/terraform-newrelic-one/issues/23)) ([e9e91c1](https://github.com/Tensho/terraform-newrelic-one/commit/e9e91c1accf1330d671d6c06137a005fec9b6145))
+
 ## [2.4.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.3.1...v2.4.0) (2026-07-20)
 
 
