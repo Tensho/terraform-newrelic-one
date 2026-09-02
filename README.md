@@ -94,6 +94,7 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 * [x] [NewRelic tags](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/use-tags-help-organize-find-your-data/)
 * [x] [NewRelic API access key](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/)
 * [x] [NewRelic entities](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/)
+* [x] [NewRelic pipeline control](https://docs.newrelic.com/docs/new-relic-control/pipeline-control/overview/)
 
 ## Contributing
 
