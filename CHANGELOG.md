@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.6.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.5.0...v2.6.0) (2026-09-02)
+
+
+### Features
+
+* **pipeline-control:** add cloud rules ([#25](https://github.com/Tensho/terraform-newrelic-one/issues/25)) ([17a5ec8](https://github.com/Tensho/terraform-newrelic-one/commit/17a5ec8664d6e776ac4b1412b56b380c148fd9a8))
+
 ## [2.5.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.4.0...v2.5.0) (2026-07-22)
 
 
