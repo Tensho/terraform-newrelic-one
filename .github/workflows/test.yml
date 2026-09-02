@@ -40,6 +40,7 @@ jobs:
           - account-management
           - entities
           - api-access-key
+          - pipeline-control
     steps:
       - uses: actions/checkout@v5
 
