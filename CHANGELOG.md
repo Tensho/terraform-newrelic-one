@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.7.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.6.0...v2.7.0) (2026-09-10)
+
+
+### Features
+
+* **events-to-metrics:** add rule ([c4fca1e](https://github.com/Tensho/terraform-newrelic-one/commit/c4fca1ec41c8e9a61a4d978e7292fb9f911a3ce9))
+
 ## [2.6.0](https://github.com/Tensho/terraform-newrelic-one/compare/v2.5.0...v2.6.0) (2026-09-02)
 
 
