@@ -1,5 +1,7 @@
 # AGENTS.md
 
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) instructions.
+
 ## Examples
 
 Examples are run against **Example** sub-account, not the parent account.

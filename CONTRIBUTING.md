@@ -27,3 +27,7 @@ cd modules/alert-policies
 terraform init
 terraform test -verbose
 ```
+
+## Tags
+
+Always cover resource with `tags` input variable (similar to other resources) if respective entity supports it.
