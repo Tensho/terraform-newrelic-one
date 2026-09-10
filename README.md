@@ -7,7 +7,7 @@ Terraform module to manage [NewRelic One](https://newrelic.com) resources (batte
 ```hcl
 module "example" {
   source  = "Tensho/one/newrelic//modules/alert-policies"
-  version = "~> 2.6"
+  version = "~> 2.7"
 
   policies = {
     "alice" = {
