@@ -41,6 +41,7 @@ jobs:
           - entities
           - api-access-key
           - pipeline-control
+          - events-to-metrics
     steps:
       - uses: actions/checkout@v5
 

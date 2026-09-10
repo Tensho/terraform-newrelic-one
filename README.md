@@ -95,6 +95,7 @@ Check out comprehensive examples in [`examples`](./examples) folder.
 * [x] [NewRelic API access key](https://docs.newrelic.com/docs/apis/intro-apis/new-relic-api-keys/)
 * [x] [NewRelic entities](https://docs.newrelic.com/docs/new-relic-solutions/new-relic-one/core-concepts/what-entity-new-relic/)
 * [x] [NewRelic pipeline control](https://docs.newrelic.com/docs/new-relic-control/pipeline-control/overview/)
+* [x] [NewRelic events to metrics](https://docs.newrelic.com/docs/data-apis/convert-to-metrics/analyze-monitor-data-trends-metrics/)
 
 ## Contributing
 
